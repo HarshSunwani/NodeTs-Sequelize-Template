@@ -1,7 +1,7 @@
 {
-  "name": "ala-api",
+  "name": "demo-app",
   "version": "1.0.0",
-  "description": "ALA Payee Application",
+  "description": "Node Application Template",
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://HarshSunwani@bitbucket.org/elastikteams/ala-api.git"
+    "url": "git+https://github.com/HarshSunwani/NodeTs-Sequelize-Template.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://bitbucket.org/elastikteams/ala-api/issues"
+    "url": "https://github.com/HarshSunwani/NodeTs-Sequelize-Template/issues"
   },
-  "homepage": "https://bitbucket.org/elastikteams/ala-api#readme",
+  "homepage": "https://github.com/HarshSunwani/NodeTs-Sequelize-Template#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

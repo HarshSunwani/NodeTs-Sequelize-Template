@@ -4,10 +4,10 @@ import config from "../../config/variable"
 const db: any = {};
 
 const sequelize = new Sequelize(
-    config.development.database as string,
-    config.development.username as string,
-    config.development.password,
-    config.development as object
+    config.database as string,
+    config.username as string,
+    config.password,
+    config as object
 );
 
 Object.keys(db).forEach((modelName) => {
@@ -22,7 +22,7 @@ db.Sequelize = Sequelize;
 sequelize
     .authenticate()
     .then(() => {
-        console.info("Connection has been established successfully.");
+        console.info("Database Connected successfully.");
     })
     .catch((err: any) => {
         console.error("Unable to connect to the database:", err);
