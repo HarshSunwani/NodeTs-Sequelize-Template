@@ -3,6 +3,7 @@ require("dotenv").config();
 const environmentVariables = {
     env: process.env.NODE_ENV,
     development: {
+        ports: process.env.DEV_PORT,
         username: process.env.DB_USER,
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
@@ -15,6 +16,7 @@ const environmentVariables = {
         fromEmail: process.env.FROM_EMAIL,
     },
     production: {
+        ports: process.env.PROD_PORT,
         username: process.env.PROD_DB_USER,
         password: process.env.PROD_DB_PASS,
         database: process.env.PROD_DB_NAME,
@@ -30,9 +32,5 @@ const environmentVariables = {
 const config = environmentVariables.env === "development"
 ? environmentVariables.development
 : environmentVariables.production;
-
-export const ports = environmentVariables.env === "development"
-? process.env.DEV_PORT
-: process.env.PROD_PORT;
 
 export default config;
