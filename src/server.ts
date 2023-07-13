@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import routes from "../src/api/routes/routes"
-import config, { ports } from "../src/config/variable";
+import config from "../src/config/variable";
 import db from "./api/models/index"
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
 app.set("trust proxy", 1);
 app.set("view engine", "ejs");
 
-const port = ports;
+const port = config.ports;
 app.listen(port, () => {
     console.info(`Server Started at: http://localhost:${port}/api`);
 });
