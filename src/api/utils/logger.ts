@@ -1,31 +1,31 @@
-import { getLogger, configure } from "log4js";
-import CustomError from "../types/customErrorType";
+import { getLogger, configure } from 'log4js';
+import CustomError from '../types/customErrorType';
 const logger = getLogger();
 
 configure({
   appenders: {
-    console: { type: "console" },
+    console: { type: 'console' },
   },
   categories: {
     default: {
-      appenders: ["console"],
-      level: "all",
+      appenders: ['console'],
+      level: 'all',
     },
   },
 });
 
 const errorLogger = (error: CustomError, functionName: string) => {
   let additionalMessageString =
-    error.sql !== undefined ? `\n SQlQuery:${error.sql}` : ``;
+    error.sql !== undefined ? `\n SQlQuery:${error.sql}` : '';
 
   additionalMessageString +=
-    error.number !== undefined ? `\n Number:${error.number}` : ``;
+    error.number !== undefined ? `\n Number:${error.number}` : '';
 
   additionalMessageString +=
-    error.parent !== undefined ? `\n ${error.parent}` : ``;
+    error.parent !== undefined ? `\n ${error.parent}` : '';
 
   additionalMessageString +=
-    error.original !== undefined ? `\n ${error.original}` : ``;
+    error.original !== undefined ? `\n ${error.original}` : '';
 
   logger.error(
     `Function Name: ${functionName} ${additionalMessageString}  \n MoreDetails:${JSON.stringify(
