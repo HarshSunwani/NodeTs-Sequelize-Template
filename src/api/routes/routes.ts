@@ -3,7 +3,7 @@ import multerRoute from './multer';
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", (_req: Request, res: Response) => {
     res.send("Welcome to DEMO API Integration");
 });
 

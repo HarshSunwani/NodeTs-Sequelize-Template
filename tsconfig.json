@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2016",                           
-    "module": "commonjs",
-    "outDir": "build/dist",                               
-    "esModuleInterop": true,                            
-    "forceConsistentCasingInFileNames": true,            
-    "strict": true,                                     
-    "skipLibCheck": true                                 
+    "baseUrl": "./",
+    "target": "ES5",
+    "lib": ["ES5", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "outDir": "dist/src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "src",
-    "models",
-    "src/server.ts",
-    "config/config.js"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

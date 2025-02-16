@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import Sequelizer, { Sequelize } from "sequelize";
-import config from "../../config/variable"
+import { Sequelize, DataTypes } from "sequelize";
+import config from "src/config/variable"
 
 const basename = path.basename(__filename);
 const db: any = {};
@@ -22,7 +22,7 @@ fs.readdirSync(__dirname)
     .forEach((file: any) => {
         const model = require(path.join(__dirname, file))(
             sequelize,
-            Sequelizer.DataTypes
+            DataTypes
         );
         db[model.name] = model;
     });

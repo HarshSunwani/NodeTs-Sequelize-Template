@@ -9,7 +9,7 @@ router.post("/uploadFiles", upload.array("file"), async function (req, res) {
     });
 });
 
-router.get("/download", (req, res, next) => {
+router.get("/download", (_req, res, _next) => {
     res.download("uploadFiles");
 });
 
